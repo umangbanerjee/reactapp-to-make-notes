@@ -11,10 +11,20 @@
 .addNotesBtn{
     /* border: 2px solid black; */
     background-color: rgb(215, 215, 215);
-    font-size: 30px;
-    border-radius: 10px;
+    font-size: 20px;
     text-align: center;
-    margin-top: 10px;
+    margin: 5px;
+    width: 2.6vw;
+    height: 2.6vw;
+    border-radius: 100%;
+    font-weight: 900;
+    margin-top: 15px;
+}
+.searchBtn{
+    background-color: rgb(215, 215, 215);
+    font-size: 20px;
+    text-align: center;
+    margin: 5px;
     width: 2.6vw;
     height: 2.6vw;
     border-radius: 100%;
@@ -22,9 +32,9 @@
 }
 .addNotes{
     text-align: center;
-    font-size: 35px;
+    font-size: 32px;
     font-weight: 800;
-    position: fixed;
+    /* position: fixed; */
     /* height: 7%; */
     /* margin-left: 2%; */
     border: 2px solid black;
@@ -38,9 +48,6 @@
 .inputBox{
     /* border: 2px solid black; */
     width: 19vw;
-     /* left: 26vw; */
-    /* top: 15vh; */
-    /* margin-left: 0.35vw; */
 
     /* position: fixed; */
     text-align: center;
@@ -55,10 +62,14 @@
     margin-bottom: 0.3vw;
     /* margin-bottom: 10px; */
 }
+.inputBox .search{
+    width: 59%;
+}
 .inputBox button{
     width: 15%;
     border-radius: 10px;
     font-size: 20px;
+    margin: 2px;
 }
 .titleBtn{
     width: 83%;
@@ -67,8 +78,16 @@
     font-size: 20px;
 }
 .titlesBox{
-    margin-top: 25%;
+    margin-top: 2%;
 }
 .deleteBtn{
     font-size: 20px;
+}
+
+.updateBtn{
+    position: fixed;
+    right: 5.5vw;
+    top: 9vh;
+    font-size: 30px;
+    border-radius: 10px;
 }

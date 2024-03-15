@@ -7,6 +7,7 @@ import { useState } from 'react'
 export default function Home() {
     const [note,setNote]=useState({title:"",text:""})
     const [arrNotes,setArrNotes]=useState([]);
+    const [arrNotesSear,setArrNotesSear]=useState([]);
     return (
         <div className={styles.BigBox}>
             <Navbar note={note} setNote={setNote} arrNotes={arrNotes} setArrNotes={setArrNotes}></Navbar>
