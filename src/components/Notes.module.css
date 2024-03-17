@@ -46,6 +46,13 @@
     background-color: white;
     border-radius: 5px;
 }
+.btnleft{
+    font-size: 40px;
+    height: 4vw;
+    width: 4vw;
+    background-color: lightgreen;
+    border-radius: 5px;
+}
 
 .colorPopup {
     /* width: 20%; */

@@ -34,7 +34,8 @@
     text-align: center;
     font-size: 32px;
     font-weight: 800;
-    /* position: fixed; */
+    position: fixed;
+    z-index: 10;
     /* height: 7%; */
     /* margin-left: 2%; */
     border: 2px solid black;
@@ -76,9 +77,11 @@
     margin-left: 2%;
     margin-bottom: 2%;
     font-size: 20px;
+    background-color: white;
+    border-radius: 5px;
 }
 .titlesBox{
-    margin-top: 2%;
+    margin-top: 42%;
 }
 .deleteBtn{
     font-size: 20px;
@@ -90,4 +93,18 @@
     top: 9vh;
     font-size: 30px;
     border-radius: 10px;
+}
+.closeBtn{
+    position: fixed;
+    left: 27.5vw;
+    top: 9vh;
+    font-size: 30px;
+    border-radius: 10px;
+}
+.space{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 20vw;
+    padding-bottom: 4vh;
+    position: fixed;
 }
