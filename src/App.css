@@ -1,0 +1,17 @@
+.App {
+    display: flex;
+    height: 100vh;
+  }
+  
+  
+  
+  .note-display {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 90%;
+  }
+  
