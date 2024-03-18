@@ -2,9 +2,7 @@ import React, { useState } from 'react'
 import styles from "./Navbar.module.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { MdAssignmentAdd } from "react-icons/md";
-import { MdOutlineFileDownloadDone } from "react-icons/md";
-import { LuFileSearch } from "react-icons/lu";
+
 export default function Navbar({ note, setNote, arrNotes, setArrNotes }) {
     const [add, setAdd] = useState(true);
     const [search, setSearch] = useState(false);
@@ -55,7 +53,7 @@ export default function Navbar({ note, setNote, arrNotes, setArrNotes }) {
         else {
             warning("Enter the Title")
         }
-       
+        // setAdd(false);
     }
     function handleDelete(index) {
         setArrNotes(arrNotes.filter((ele, ind) => ind !== index))
@@ -85,7 +83,7 @@ export default function Navbar({ note, setNote, arrNotes, setArrNotes }) {
             setArrNotes(arrNotes.filter((ele) => ele.title.includes(searchInp)))
         }
         setSearchInp("")
-       
+        // setSearch(false);
     }
     function handleSearchInput(e) {
         e.preventDefault()
@@ -94,20 +92,24 @@ export default function Navbar({ note, setNote, arrNotes, setArrNotes }) {
     }
     function handleCancel(e) {
         e.preventDefault()
-          setArrNotes(searchArr);
+        // if (searchInp !== "") {
+            setArrNotes(searchArr);
+        // }
         setSearchInp("")
-        
+        // setSearch(false);
     }
     function handleUpdate(e) {
         e.preventDefault()
         if (note.title !== "") {
             arrNotes[update.index] = note;
             success("Note's Updated")
-            
+            // setNote({title:"",text:""})
+            // setUpdate({state:false,index:update.index})
         }
         else {
             warning("Enter the Title")
         }
+        // setArrNotes(arrNotes)
     }
     function handleClose(e) {
         e.preventDefault()
@@ -131,12 +133,12 @@ export default function Navbar({ note, setNote, arrNotes, setArrNotes }) {
                 />
             </div>
             <div className={styles.Navbox}>
-                <div className={styles.addNotes}><button className={styles.addNotesBtn} onClick={handleaddInput}><MdAssignmentAdd/></button><button className={styles.searchBtn} onClick={handleSearchInput}><LuFileSearch /></button>
+                <div className={styles.addNotes}>Add Notes <button className={styles.addNotesBtn} onClick={handleaddInput}><i class="fa-solid fa-plus"></i></button><button className={styles.searchBtn} onClick={handleSearchInput}><i class="fa-solid fa-magnifying-glass"></i></button>
                     {add && (
                         <div className={styles.inputBox}>
                             <form >
                                 <input type="text" placeholder=' Enter The Title' onChange={handleChange} value={note.title} id='title' />
-                                <button onClick={handleClick} className={styles.btn}><MdOutlineFileDownloadDone /></button>
+                                <button onClick={handleClick} className={styles.btn}><i class="fa-solid fa-floppy-disk"></i></button>
                             </form>
                         </div>
                     )}
@@ -144,8 +146,8 @@ export default function Navbar({ note, setNote, arrNotes, setArrNotes }) {
                         <div className={styles.inputBox}>
                             <form >
                                 <input type="text" placeholder=' Search' onChange={handleSearchChange} className={styles.search} value={searchInp} id='title' />
-                                <button className={styles.btn} onClick={handleSearch} ><i class="fa-solid fa-magnifying-glass">🔍</i></button>
-                                <button className={styles.btn} onClick={handleCancel} ><i class="fa-solid fa-xmark">❌</i></button>
+                                <button onClick={handleSearch} ><i class="fa-solid fa-magnifying-glass"></i></button>
+                                <button onClick={handleCancel} ><i class="fa-solid fa-xmark"></i></button>
                             </form>
                         </div>
                     )}
