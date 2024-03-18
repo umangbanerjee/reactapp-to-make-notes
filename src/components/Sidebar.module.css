@@ -1,0 +1,68 @@
+.Navbox{
+    width: 20vw;
+    height: 86vh;
+    margin-top: 3vh;
+    margin-left: 2vw;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.addNotesBtn{
+    /* border: 2px solid black; */
+    background-color: rgb(215, 215, 215);
+    font-size: 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+    width: 2.6vw;
+    height: 2.6vw;
+    border-radius: 100%;
+    font-weight: 900;
+}
+.addNotes{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 800;
+    position: fixed;
+    height: 8.1%;
+    /* margin-left: 2%; */
+    /* border: 2px solid black; */
+    background-color: white;
+    border-radius: 10px;
+    width: 20vw;
+}
+.inputBox{
+    /* border: 2px solid black; */
+    width: 70vw;
+    left: 26vw;
+    top: 7vh;
+    padding-top: 01vw;
+    position: fixed;
+    text-align: center;
+    background-color: rgb(250, 248, 248);
+    border-radius: 20px;
+}
+.inputBox input{
+    width: 75%;
+    border-radius: 10px;
+    font-size: 30px;
+    margin-right: 1%;
+    margin-bottom: 0.3vw;
+    /* margin-bottom: 10px; */
+}
+.inputBox button{
+    width: 21%;
+    border-radius: 10px;
+    font-size: 30px;
+}
+.titleBtn{
+    width: 83%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    font-size: 20px;
+}
+.titlesBox{
+    margin-top: 25%;
+}
+.deleteBtn{
+    font-size: 20px;
+}

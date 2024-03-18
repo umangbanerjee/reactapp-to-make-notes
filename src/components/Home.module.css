@@ -5,5 +5,6 @@
     margin-top: 4vh;
     border-radius: 20px;
     box-shadow: 0px 0px 20px black;
+    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
     display: flex;
 }

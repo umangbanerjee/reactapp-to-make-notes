@@ -1,16 +1,12 @@
-
-.Notesbox {
+.Notesbox{
     width: 70vw;
     height: 86vh;
     margin-top: 3vh;
     margin-left: 2vw;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px lightgreen;
 }
-
-.inputNotes {
+.inputNotes{
     font-size: 20px;
-    margin-top: 2vh;
+    margin-top: 3vh;
     margin-left: 1.7vh;
     border-radius: 10px;
     height: 62vh;
@@ -19,47 +15,23 @@
     text-wrap: wrap;
     padding: 10px;
 }
-
-.notesName {
-    font-family: cursive;
-    height: 6vh;
-    margin-bottom:40px;
-    margin-top: -5px;
-    /* border: 2px solid black; */
+.notesName{
+    height:6vh;
+    margin-top: 5px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     font-size: 50px;
     font-weight: 900;
 }
-
-.funBtn {
-    margin-top: 3vh;
+.funBtn{
+    margin-top:5vh;
     display: flex;
     justify-content: space-around;
-    /* background-color: beige; */
-
 }
-
-.btn {
+.btn{
     font-size: 40px;
     height: 4vw;
     width: 4vw;
     background-color: white;
     border-radius: 5px;
-}
-.btnleft{
-    font-size: 40px;
-    height: 4vw;
-    width: 4vw;
-    background-color: lightgreen;
-    border-radius: 5px;
-}
-
-.colorPopup {
-    /* width: 20%; */
-    border: 2px solid black;
-    border-radius: 5px;
-    position: fixed;
-    margin-left: 20vw;
-    margin-top: 1vh;
-    background-color: white;
 }
