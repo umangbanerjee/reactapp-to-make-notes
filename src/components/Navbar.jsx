@@ -80,7 +80,7 @@ export default function Navbar({ note, setNote, arrNotes, setArrNotes }) {
         e.preventDefault()
         if (searchInp.trim() !== "") {
             setSearchArr(arrNotes)
-            setArrNotes(arrNotes.filter((ele) => ele.title.includes(searchInp)))
+            setArrNotes(arrNotes.filter((ele) => ele.title.toLowerCase().trim().includes(searchInp.toLowerCase().trim())))
         }
         setSearchInp("")
         // setSearch(false);

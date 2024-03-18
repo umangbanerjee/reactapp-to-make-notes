@@ -11,18 +11,18 @@
 .addNotesBtn{
     /* border: 2px solid black; */
     background-color: rgb(215, 215, 215);
-    font-size: 20px;
+    font-size: 1.3vw;
     text-align: center;
-    margin: 5px;
+    margin: 0.1vw;
     width: 2.6vw;
     height: 2.6vw;
     border-radius: 100%;
     font-weight: 900;
-    margin-top: 15px;
+    margin-top: 2vh;
 }
 .searchBtn{
     background-color: rgb(215, 215, 215);
-    font-size: 20px;
+    font-size: 1.3vw;
     text-align: center;
     margin: 5px;
     width: 2.6vw;
@@ -32,7 +32,7 @@
 }
 .addNotes{
     text-align: center;
-    font-size: 32px;
+    font-size: 2vw;
     font-weight: 800;
     position: fixed;
     z-index: 10;
@@ -69,14 +69,14 @@
 .inputBox button{
     width: 15%;
     border-radius: 10px;
-    font-size: 20px;
-    margin: 2px;
+    font-size: 1.3vw;
+    margin: 0.1vw;
 }
 .titleBtn{
     width: 83%;
     margin-left: 2%;
     margin-bottom: 2%;
-    font-size: 20px;
+    font-size: 1.3vw;
     background-color: white;
     border-radius: 5px;
 }
@@ -84,21 +84,21 @@
     margin-top: 42%;
 }
 .deleteBtn{
-    font-size: 20px;
+    font-size: 1.3vw;
 }
 
 .updateBtn{
     position: fixed;
     right: 5.5vw;
     top: 9vh;
-    font-size: 30px;
+    font-size: 2vw;
     border-radius: 10px;
 }
 .closeBtn{
     position: fixed;
     left: 27.5vw;
     top: 9vh;
-    font-size: 30px;
+    font-size: 2vw;
     border-radius: 10px;
 }
 .space{
