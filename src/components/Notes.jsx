@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import styles from "./Notes.module.css"
 import { ColorPicker } from 'primereact/colorpicker';
 
@@ -23,11 +23,11 @@ export default function Notes({ note, setNote }) {
         setBold(!bold)
         if (!bold) {
             document.getElementById("text").style.fontWeight = "bold";
-            document.getElementById("bold").style.backgroundColor = "lightgreen"
+            document.getElementById("bold").style.backgroundColor = "lightgreen";
         }
         else {
             document.getElementById("text").style.fontWeight = "normal";
-            document.getElementById("bold").style.backgroundColor = "white"
+            document.getElementById("bold").style.backgroundColor = "white";
         }
     }
     function handleItalic(e) {
@@ -35,11 +35,11 @@ export default function Notes({ note, setNote }) {
         setItalic(!italic)
         if (!italic) {
             document.getElementById("text").style.fontStyle = "italic";
-            document.getElementById("italic").style.backgroundColor = "lightgreen"
+            document.getElementById("italic").style.backgroundColor = "lightgreen";
         }
         else {
             document.getElementById("text").style.fontStyle = "normal";
-            document.getElementById("italic").style.backgroundColor = "white"
+            document.getElementById("italic").style.backgroundColor = "white";
         }
     }
     function handleUnderline(e) {
@@ -47,11 +47,11 @@ export default function Notes({ note, setNote }) {
         setUnderline(!underline)
         if (!underline) {
             document.getElementById("text").style.textDecorationLine = "underline";
-            document.getElementById("underline").style.backgroundColor = "lightgreen"
+            document.getElementById("underline").style.backgroundColor = "lightgreen";
         }
         else {
             document.getElementById("text").style.textDecorationLine = "none";
-            document.getElementById("underline").style.backgroundColor = "white"
+            document.getElementById("underline").style.backgroundColor = "white";
         }
     }
     function handleColor(e) {
@@ -61,7 +61,7 @@ export default function Notes({ note, setNote }) {
             document.getElementById("color").style.backgroundColor = "lightgreen";
         }
         else {
-            document.getElementById("color").style.backgroundColor = "white"
+            document.getElementById("color").style.backgroundColor = "white";
         }
     }
     function handleLeft(e) {
@@ -69,13 +69,13 @@ export default function Notes({ note, setNote }) {
         setLeft(!left)
         if (!left) {
             document.getElementById("text").style.textAlign = "left";
-            document.getElementById("left").style.backgroundColor = "lightgreen"
+            document.getElementById("left").style.backgroundColor = "lightgreen";
             setRight(false)
             setCenter(false)
             setJustify(false)
-            document.getElementById("right").style.backgroundColor = "white"
-            document.getElementById("center").style.backgroundColor = "white"
-            document.getElementById("justify").style.backgroundColor = "white"
+            document.getElementById("right").style.backgroundColor = "white";
+            document.getElementById("center").style.backgroundColor = "white";
+            document.getElementById("justify").style.backgroundColor = "white";
         }
         // else {
         //     document.getElementById("left").style.backgroundColor = "white"
@@ -151,8 +151,10 @@ export default function Notes({ note, setNote }) {
     }
     function handleColorChange(e) {
         setColor(e.target.value)
-        document.getElementById("text").style.color = `#${color}`;
     }
+    useEffect(() => {
+        document.getElementById("text").style.color = `#${color}`;
+    });
     
     return (
         <div className={styles.Notesbox}>
