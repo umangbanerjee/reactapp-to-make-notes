@@ -10,7 +10,7 @@ export default function Home() {
     return (
         <div className={styles.BigBox}>
             <Navbar note={note} setNote={setNote} arrNotes={arrNotes} setArrNotes={setArrNotes}></Navbar>
-            <Notes note={note} setNote={setNote} arrNotes={arrNotes} setArrNotes={setArrNotes}></Notes>
+            <Notes note={note} setNote={setNote}></Notes>
         </div>
     )
 }
