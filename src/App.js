@@ -1,11 +1,11 @@
 import React from "react";
-
+import NotesApp from "./components/NotesApp";
+import "./App.css";
 function App() {
   return (
-    <div>
-      <h1>i am checking twic</h1>
-
-    </div>
+    <>
+      <NotesApp />
+    </>
   );
 }
 
