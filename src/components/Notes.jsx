@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styles from "./Notes.module.css"
 import { ColorPicker } from 'primereact/colorpicker';
+import { jsPDF } from "jspdf";
 
 export default function Notes({ note, setNote }) {
     const [color1, setColor1] = useState(false);
@@ -13,6 +14,7 @@ export default function Notes({ note, setNote }) {
     const [justify, setJustify] = useState(false);
     const [center, setCenter] = useState(false);
     const [print, setPrint] = useState(false);
+
 
     function handleChange(e) {
         e.preventDefault();
@@ -136,13 +138,9 @@ export default function Notes({ note, setNote }) {
         e.preventDefault();
         setPrint(!print)
         if (!print) {
-            var printTextArea = document.getElementById("text");
-            var WinPrint = window.open('left=0,top=0,width=800,height=900,');
-            WinPrint.document.write(printTextArea.innerHTML);
-            WinPrint.document.close();
-            WinPrint.focus();
-            WinPrint.print();
-            WinPrint.close();
+            const doc = new jsPDF();
+            doc.text(`${note.text}`, 10, 10);
+            doc.save(`${note.title}.pdf`);
         }
         setPrint(false);
     }
@@ -167,7 +165,7 @@ export default function Notes({ note, setNote }) {
                 <button className={styles.btn} onClick={handleRight} id="right"><i class="fa-solid fa-align-right"></i></button>
                 <button className={styles.btn} onClick={handleJustify} id="justify"><i class="fa-solid fa-align-justify" ></i></button>
                 <button className={styles.btn} onClick={handleCenter} id="center"><i class="fa-solid fa-align-center"></i></button>
-                <button className={styles.btn} onClick={handlePrint} id="print"><i class="fa-solid fa-print"></i></button>
+                <button className={styles.btn} onClick={handlePrint} id="print"><i class="fa-solid fa-download"></i></button>
             </div>
             {color1 && (
                 <div className={styles.colorPopup}>
