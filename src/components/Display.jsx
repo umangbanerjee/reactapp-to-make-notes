@@ -117,7 +117,7 @@ function handleCenter(e) {
     <div className={styles.display}>
         <div className={styles.title}><h2>{writeNotes?<div>
             <form action="" onSubmit={submitnotes}>
-                <input type="text" onChange={addnotes} id='title' className={styles.input}/>
+                <input type="text" onChange={addnotes} id='title' className={styles.input} placeholder="Give Title Here" />
                 <button className={styles.btn}>Add</button>
             </form>
         </div>:dis?object.title:<h1>TITLE</h1>}</h2></div>
@@ -131,7 +131,7 @@ function handleCenter(e) {
           
           </div>
         {/* <div className={styles.notes}> */}
-            <textarea  onChange={handleChange}  className={styles.notesTextArea}  id='text'  value={object.text} ></textarea>
+            <textarea  onChange={handleChange}  className={styles.notesTextArea}  id='text'  value={object.text} placeholder="Write Notes After adding Title" ></textarea>
             
             {/* </div> */}
             <label htmlFor="words" className={styles.lab}>Total Letters : </label>
