@@ -25,6 +25,7 @@ export default function Display({setObject,object,arr,setArr,writeNotes,setWrite
       setArr([...arr,object])
       setWriteNotes(false)
       setObject({title:"",text:""})
+      setDis(false)
     }
 }
 function addnotes(e){

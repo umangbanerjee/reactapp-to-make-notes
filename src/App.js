@@ -14,9 +14,6 @@ function App() {
     
   })
   const [arr, setArr]=useState([])
-  // function addtitle(title){
-  //   setObject({...object,title:title})
-  // }
   return (
     <div className="App">
       <Container>
