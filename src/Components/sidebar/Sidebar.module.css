@@ -1,0 +1,30 @@
+.head{
+  background-color:rgb(68, 68, 74);
+}
+
+.createNote{
+    border-radius: 5px;
+    border: 0;
+    width: 100%;
+    font-size:xx-large;
+    background-color:rgb(110, 107, 104);
+    color: aliceblue;
+    margin-top: 1vh;
+}
+
+.createNoteInput{
+    border: 0;
+    width:90%;
+  }
+
+.createNoteButton{
+    border: 0;
+    width: 10%;
+}
+.NotesList{
+    height: 83vh;
+    position: static;
+    overflow-y: auto;
+    margin-left: 1vw;
+}
+
