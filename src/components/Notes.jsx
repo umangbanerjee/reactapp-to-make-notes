@@ -147,7 +147,7 @@ export default function Notes({ note, setNote }) {
             WinPrint.print();
             WinPrint.close();
         }
-        setPrint(true);
+        setPrint(false);
     }
     function handleColorChange(e) {
         setColor(e.target.value)
