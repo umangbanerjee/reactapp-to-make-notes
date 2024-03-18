@@ -1,182 +1,191 @@
-import React, { useState } from 'react'
-import styles from "./Notes.module.css"
-import { ColorPicker } from 'primereact/colorpicker';
+import React, { useState } from 'react';
+import styles from "./Notes.module.css";
 
-export default function Notes({ note, setNote }) {
-    const [color1, setColor1] = useState(false);
-    const [bold, setBold] = useState(false);
-    const [italic, setItalic] = useState(false);
-    const [underline, setUnderline] = useState(false);
-    const [color, setColor] = useState("black");
-    const [left, setLeft] = useState(false);
-    const [right, setRight] = useState(false);
-    const [justify, setJustify] = useState(false);
-    const [center, setCenter] = useState(false);
-    const [print, setPrint] = useState(false);
-    
-    function handleChange(e) {
-        e.preventDefault();
-            setNote({ ...note, [e.target.id]: e.target.value })
+export default function Notes() {
+  const [data, setData] = useState([]);
+  const [notes, setNotes] = useState("");
+  const [title, setTitle] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [bold , setBold] = useState(false);
+  const [italic, setItalic] = useState(false);
+  const [underline, setUnderline] = useState(false);
+  const [alignLeft, setAlignLeft] = useState(false);
+  const [alignCenter, setAlignCenter] = useState(false);
+  const [alignRight, setAlignRight] = useState(false);
+  const [viewingNoteIndex, setViewingNoteIndex] = useState(null);
+  const [creatingNewNote, setCreatingNewNote] = useState(false);
+
+  function handleBold() {
+    setBold(!bold);
+    const textarea = document.getElementById("notes");
+    if (bold) {
+      textarea.style.fontWeight = "normal";
+    } else {
+      textarea.style.fontWeight = "bold";
     }
-    function handleBold(e) {
-        e.preventDefault();
-        setBold(!bold)
-        if (!bold) {
-            document.getElementById("text").style.fontWeight = "bold";
-            document.getElementById("bold").style.backgroundColor = "lightgreen"
-        }
-        else {
-            document.getElementById("text").style.fontWeight = "normal";
-            document.getElementById("bold").style.backgroundColor = "white"
-        }
+  }
+
+  function handleItalic() {
+    setItalic(!italic);
+    const textarea = document.getElementById("notes");
+    if (italic) {
+      textarea.style.fontStyle = "normal";
+    } else {
+      textarea.style.fontStyle = "italic";
     }
-    function handleItalic(e) {
-        e.preventDefault();
-        setItalic(!italic)
-        if (!italic) {
-            document.getElementById("text").style.fontStyle = "italic";
-            document.getElementById("italic").style.backgroundColor = "lightgreen"
-        }
-        else {
-            document.getElementById("text").style.fontStyle = "normal";
-            document.getElementById("italic").style.backgroundColor = "white"
-        }
+  }
+
+  function handleUnderline() {
+    setUnderline(!underline);
+    const textarea = document.getElementById("notes");
+    if (underline) {
+      textarea.style.textDecoration = "none";
+    } else {
+      textarea.style.textDecoration = "underline";
     }
-    function handleUnderline(e) {
-        e.preventDefault();
-        setUnderline(!underline)
-        if (!underline) {
-            document.getElementById("text").style.textDecorationLine = "underline";
-            document.getElementById("underline").style.backgroundColor = "lightgreen"
-        }
-        else {
-            document.getElementById("text").style.textDecorationLine = "none";
-            document.getElementById("underline").style.backgroundColor = "white"
-        }
+  }
+
+  function handleAlignLeft() {
+    setAlignLeft(!alignLeft);
+    const textarea = document.getElementById("notes");
+    if (alignLeft) {
+      textarea.style.textAlign = "left";
+    } else {
+      textarea.style.textAlign = "left";
     }
-    function handleColor(e) {
-        e.preventDefault();
-        setColor1(!color1)
-        if (!color1) {
-            document.getElementById("color").style.backgroundColor = "lightgreen";
-        }
-        else {
-            document.getElementById("color").style.backgroundColor = "white"
-        }
+    setAlignCenter(false);
+    setAlignRight(false);
+  }
+
+  function handleAlignCenter() {
+    setAlignCenter(!alignCenter);
+    const textarea = document.getElementById("notes");
+    if (alignCenter) {
+      textarea.style.textAlign = "center";
+    } else {
+      textarea.style.textAlign = "center";
     }
-    function handleLeft(e) {
-        e.preventDefault();
-        setLeft(!left)
-        if (!left) {
-            document.getElementById("text").style.textAlign = "left";
-            document.getElementById("left").style.backgroundColor = "lightgreen"
-            setRight(false)
-            setCenter(false)
-            setJustify(false)
-            document.getElementById("right").style.backgroundColor = "white"
-            document.getElementById("center").style.backgroundColor = "white"
-            document.getElementById("justify").style.backgroundColor = "white"
-        }
-        // else {
-        //     document.getElementById("left").style.backgroundColor = "white"
-        // }
+    setAlignLeft(false);
+    setAlignRight(false);
+  }
+
+  function handleAlignRight() {
+    setAlignRight(!alignRight);
+    const textarea = document.getElementById("notes");
+    if (alignRight) {
+      textarea.style.textAlign = "right";
+    } else {
+      textarea.style.textAlign = "right";
     }
-    function handleRight(e) {
-        e.preventDefault();
-        setRight(!right)
-        if (!right) {
-            document.getElementById("text").style.textAlign = "right";
-            document.getElementById("right").style.backgroundColor = "lightgreen"
-            setLeft(false)
-            setCenter(false)
-            setJustify(false)
-            document.getElementById("left").style.backgroundColor = "white"
-            document.getElementById("center").style.backgroundColor = "white"
-            document.getElementById("justify").style.backgroundColor = "white"
-        }
-        else {
-            document.getElementById("right").style.backgroundColor = "white"
-            handleLeft(e)
-        }
+    setAlignLeft(false);
+    setAlignCenter(false);
+  }
+
+  function handleChange(e) {
+    let id = e.target.id;
+    if (id === 'notes') {
+      setNotes(e.target.value);
+    } else if (id === 'title') {
+      setTitle(e.target.value);
     }
-    function handleJustify(e) {
-        e.preventDefault();
-        setJustify(!justify)
-        if (!justify) {
-            document.getElementById("text").style.textAlign = "justify";
-            document.getElementById("justify").style.backgroundColor = "lightgreen"
-            setRight(false)
-            setCenter(false)
-            setLeft(false)
-            document.getElementById("right").style.backgroundColor = "white"
-            document.getElementById("center").style.backgroundColor = "white"
-            document.getElementById("left").style.backgroundColor = "white"
-        }
-        else {
-            document.getElementById("justify").style.backgroundColor = "white"
-            handleLeft(e)
-        }
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (viewingNoteIndex !== null) {
+      return;
     }
-    function handleCenter(e) {
-        e.preventDefault();
-        setCenter(!center)
-        if (!center) {
-            document.getElementById("text").style.textAlign = "center";
-            document.getElementById("center").style.backgroundColor = "lightgreen"
-            setRight(false)
-            setLeft(false)
-            setJustify(false)
-            document.getElementById("right").style.backgroundColor = "white"
-            document.getElementById("left").style.backgroundColor = "white"
-            document.getElementById("justify").style.backgroundColor = "white"
-        }
-        else {
-            document.getElementById("center").style.backgroundColor = "white"
-            handleLeft(e)
-        }
-    }
-    function handlePrint(e) {
-        e.preventDefault();
-        setPrint(!print)
-        if (!print) {
-            var printTextArea = document.getElementById("text");
-            var WinPrint = window.open('left=0,top=0,width=800,height=900,');
-            WinPrint.document.write(printTextArea.innerHTML);
-            WinPrint.document.close();
-            WinPrint.focus();
-            WinPrint.print();
-            WinPrint.close();
-        }
-        setPrint(true);
-    }
-    function handleColorChange(e) {
-        setColor(e.target.value)
-        document.getElementById("text").style.color = `#${color}`;
-    }
-    
-    return (
-        <div className={styles.Notesbox}>
-            <div className={styles.notesName}>
-                
-                <label htmlFor="title"><u>{note.title === "" ? "Title" : note.title}</u></label>
-            </div>
-            <div className={styles.funBtn}>
-                <button className={styles.btn} onClick={handleBold} id="bold"><i class="fa-solid fa-bold"></i></button>
-                <button className={styles.btn} onClick={handleItalic} id="italic"><i class="fa-solid fa-italic"></i></button>
-                <button className={styles.btn} onClick={handleUnderline} id="underline"><i class="fa-solid fa-underline"></i></button>
-                <button className={styles.btn} onClick={handleColor} id="color"><i class="fa-solid fa-palette" ></i></button>
-                <button className={styles.btnleft} onClick={handleLeft} id="left"><i class="fa-solid fa-align-left"></i></button>
-                <button className={styles.btn} onClick={handleRight} id="right"><i class="fa-solid fa-align-right"></i></button>
-                <button className={styles.btn} onClick={handleJustify} id="justify"><i class="fa-solid fa-align-justify" ></i></button>
-                <button className={styles.btn} onClick={handleCenter} id="center"><i class="fa-solid fa-align-center"></i></button>
-                <button className={styles.btn} onClick={handlePrint} id="print"><i class="fa-solid fa-print"></i></button>
-            </div>
-            {color1 && (
-                <div className={styles.colorPopup}>
-                    <ColorPicker value={color} onChange={handleColorChange} inline />
-                </div>
-            )}
-            <textarea type="text" onChange={handleChange} id='text' value={note.text} className={styles.inputNotes} placeholder='Write Your Notes Here' />
+    setData([...data, { title, note: notes }]); 
+    setNotes(''); 
+    setTitle('');
+    setCreatingNewNote(false);
+  }
+
+  function handleDelete(index) {
+    const updatedData = [...data];
+    updatedData.splice(index, 1);
+    setData(updatedData);
+  }
+
+  function handleView(index) {
+    setViewingNoteIndex(index);
+    setTitle(data[index].title);
+    setNotes(data[index].note); 
+  }
+
+  function handleNewNote() {
+    setViewingNoteIndex(null); 
+    setNotes('');
+    setTitle('');
+    setCreatingNewNote(true);
+  }
+
+  function handleDownload() {
+    const element = document.createElement("a");
+    const file = new Blob([notes], { type: 'text/plain' });
+    element.href = URL.createObjectURL(file);
+    element.download = "notes.txt";
+    document.body.appendChild(element); // Required for Firefox
+    element.click();
+  }
+
+  function handleSearch() {
+    const query = searchQuery.toLowerCase();
+    const filteredData = data.filter(item => {
+      const titleMatch = item.title.toLowerCase().includes(query);
+      const noteMatch = item.note.toLowerCase().includes(query);
+      return titleMatch || noteMatch;
+    });
+    setData(filteredData);
+  }
+
+  return (
+    <div className={styles.containr}>
+      <div className={styles.sidebar}>
+        <button className={styles.createbtn} onClick={handleNewNote}>Create new Note</button>
+        {creatingNewNote && (
+          <div className={styles.titleInput}>
+            <label htmlFor="title">Title:</label>
+            <input type="text" id="title" value={title} onChange={handleChange} />
+          </div>
+        )}
+        <div className={styles.searchContainer}>
+          <input
+            type="text"
+            placeholder="Search notes"
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+          />
+          <button className={styles.searchBtn} onClick={handleSearch}>Search</button>
         </div>
-    )
+        <div className={styles.output}>
+          {data.map((value, index) => (
+            <ul key={index}>
+              <li onClick={() => handleView(index)}>{value.title}</li>
+              <button type='button' className={styles.buttn} onClick={() => handleDelete(index)}><i class="fa-solid fa-trash"></i></button>
+            </ul>
+          ))}
+        </div>
+      </div>
+      <div className={styles.notesarea}>
+        <div className={styles.l}>
+          <h3>Write notes Here !</h3>
+          <button className={styles.btn} onClick={handleBold}> <i className="fa-solid fa-bold"></i></button>
+          <button className={styles.btn} onClick={handleItalic}> <i className="fa-solid fa-italic"></i></button>
+          <button className={styles.btn} onClick={handleUnderline}> <i className="fa-solid fa-underline"></i></button>
+          <button className={styles.btn} onClick={handleAlignLeft}> <i className="fa-solid fa-align-left"></i></button>
+          <button className={styles.btn} onClick={handleAlignCenter}> <i className="fa-solid fa-align-center"></i></button>
+          <button className={styles.btn} onClick={handleAlignRight}> <i className="fa-solid fa-align-right"></i></button>
+          <button className={styles.btn} onClick={handleDownload}> <i className="fa-solid fa-download"></i></button>
+        </div>
+        <div className={styles.forms}>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="write"></label>
+            <textarea name="text" id="notes" cols="60" rows="18" value={notes} onChange={handleChange}></textarea>
+            <button type="submit" className={styles.savebtn}>Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
 }

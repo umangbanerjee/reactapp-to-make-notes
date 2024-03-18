@@ -1,65 +1,106 @@
+/* Notes.module.css */
 
-.Notesbox {
-    width: 70vw;
-    height: 86vh;
-    margin-top: 3vh;
-    margin-left: 2vw;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px lightgreen;
+.sidebar {
+  border: 2px solid black;
+  margin: 1%;
+  height: 94vh;
+  width: 25%;
+  border-radius: 10px;
+  overflow: scroll;
 }
 
-.inputNotes {
-    font-size: 20px;
-    margin-top: 2vh;
-    margin-left: 1.7vh;
-    border-radius: 10px;
-    height: 62vh;
-    width: 66.5vw;
-    overflow: auto;
-    text-wrap: wrap;
-    padding: 10px;
+.containr {
+  border: 2px solid black;
+  margin: 0.5%;
+  border-radius: 10px;
+  display: flex;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.notesName {
-    font-family: cursive;
-    height: 6vh;
-    margin-bottom:40px;
-    margin-top: -5px;
-    /* border: 2px solid black; */
-    text-align: center;
-    font-size: 50px;
-    font-weight: 900;
+.notesarea {
+  border: 2px solid black;
+  margin: 1%;
+  height: 94vh;
+  width: 75%;
+  border-radius: 10px;
+  align-items: center;
 }
 
-.funBtn {
-    margin-top: 3vh;
-    display: flex;
-    justify-content: space-around;
-    /* background-color: beige; */
-
+textarea {
+  margin: 1%;
+  padding: 2%;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: calc(90% - 20px); /* Adjusted width */
 }
 
+.forms {
+  text-align: center;
+}
+
+.savebtn,
 .btn {
-    font-size: 40px;
-    height: 4vw;
-    width: 4vw;
-    background-color: white;
-    border-radius: 5px;
-}
-.btnleft{
-    font-size: 40px;
-    height: 4vw;
-    width: 4vw;
-    background-color: lightgreen;
-    border-radius: 5px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin: 8px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.colorPopup {
-    /* width: 20%; */
-    border: 2px solid black;
-    border-radius: 5px;
-    position: fixed;
-    margin-left: 20vw;
-    margin-top: 1vh;
-    background-color: white;
+.savebtn:hover,
+.btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.logo {
+  display: flex;
+  border: 1px solid #ccc;
+  margin: 1%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  margin: 2% auto;
+  font-size: 20px;
+}
+
+.createbtn {
+  position: sticky;
+  padding: 8px 16px;
+  margin: 16px 0;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #f44336; /* Red */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.createbtn:hover {
+  background-color: #dd1913; /* Darker red on hover */
+}
+
+.buttn {
+  margin: 8px;
+}
+
+.output {
+  border: 2px solid black;
+  margin: 2%;
+  border-radius: 10px;
+}
+
+ul {
+  border: 2px solid black;
+  margin-left: 12%;
+  margin-right: 12%;
+  text-decoration: none;
+  list-style: decimal;
 }
