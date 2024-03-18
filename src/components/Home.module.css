@@ -1,9 +1,161 @@
-.BigBox{
-    width: 96vw;
-    height: 92vh;
-    margin: auto;
-    margin-top: 4vh;
-    border-radius: 20px;
-    box-shadow: 0px 0px 20px black;
+body{
+    background-color:#f1f37e;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+ }
+ @keyframes example {
+    0%   {background-color:coral;}
+    25%  {background-color: yellow;}
+    50%  {background-color: rgb(114, 114, 212);}
+    75%  {background-color:rgb(244, 91, 60);}
+    100% {background-color: green;}
+  }
+ *{
+   margin: 0 ;
+ }
+ .BigBox{
+     
+     box-shadow: 2px 4px 20px black;
+     margin: 10px;
+     margin-top: 30px;
+     width: 94vw;
+     height: 85vh;
+     padding: 4vh;
+     display: flex;
+     position: fixed;
+     background-color:#dae9f0;
+  
+ }
+ .SideBox{
+     box-shadow: 0px 0px 4px black;
+     width: 25%;
+     height: 80vh;
+     border: 2px solid black;
+     overflow: scroll;
+     margin-top: 40px;
+     }
+     .Textbox{
+         margin-left: 16%;
+         margin-top: 40px;
+         border: 2px solid rgb(20, 20, 19);
+         box-shadow: 0px 0px 4px black;
+         width: 55vw;
+          height: 80vh;
+          
+      }
+ .NestTextbox{
+     border: 2px solid black;
+     width: 50vw;
+     height: 60vh;
+      }
+ 
+      textarea{
+       padding-left: 0.5rem;
+       padding-top: 0.5rem;
+      }
+      .title{
+         width: 35vw;
+         height: 5vh;
+         margin: 20px;
+         font-size: large;
+      }
+      label{
+         font-weight: 900;
+ 
+      }
+      .btn{
+        padding-left: 10px;
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 10px;
+        margin: 20px;
+        
+      }
+      .btn:hover{
+       background-color: rgb(73, 112, 81);
+      }
+  .Addnote{
+     height: 5vh;
+     border: 2px solid black;
+     margin: 20px;
+    padding-top: 20px;
+     text-align: center;
+     /* display: flex; */
+  }
+  .adNote{
+     height: 5vh;
+     width: 20vw;
+     border: 2px solid black;
+     display: flex;
+     text-align: left;
+     margin-left: 20px;
+     padding-top: 10px;
+     padding-left: 4px;
+     word-wrap: break-word;
+     margin-bottom: 30px;
+     overflow: scroll;
+  }
+  .addlistitle{
+     width: 5vw;
+  }
+  .li{
+     list-style-type: none;
+  }
+  .addli{
+     border: 2px solid black;
+  }
+ 
+  .icon{
+     width: 2vw;
+     height: 3vh;
+     border: 2px solid black;
+     text-align: center;
+     margin-left: 9rem;
+    background-color: rgb(232, 108, 104);
+    
+ }
+ .boldd{
+    margin: 20px 110px;
+   display: flex;
+ }
+ .bold{
+    padding: 11px;
+    margin-right: 110px;  
+ }
+ .searchh{
+    margin-right: 15px;
+    color: rgb(44, 102, 226);
+    padding: 10px;
+    border-radius: 5px;
+ }
+ .searchhhh{
+    color: rgb(44, 102, 226);
+    padding: 10px;
+    border-radius: 5px;
+ }
+ .headingg{
+    /* border: 2px solid black; */
+    width: 85vw;
+    height: 1vh;
+    margin-left: 40%;
+    font-size: larger;
+  gap: 30px;
     display: flex;
-}
+ }
+ .searchhh{
+    height: 4vh;
+    margin-right: 50px;
+    width: 13vw;
+    border-radius: 5px;
+ }
+ label::first-letter{
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: cursive;
+ }
+ 
+  
+ 
