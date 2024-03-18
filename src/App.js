@@ -1,16 +1,25 @@
-import {Routes,Route} from 'react-router-dom'
-import Home from './components/Home';
-import Notes from './components/Notes';
-import Navbar from './components/Navbar';
+// import logo from './logo.svg';
+import './App.css';
+import { useState } from 'react';
+import Container from './components/Container';
+import SideNavbar from './components/SideNavbar';
+import Display from './components/Display';
 
 function App() {
+  const [writeNotes,setWriteNotes]=useState(false)
+  const [dis,setDis]=useState(false)
+  const [object,setObject]=useState({
+    title:"",
+    text:""
+    
+  })
+  const [arr, setArr]=useState([])
   return (
-    <div>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/notes' element={<Notes/>}/>
-        <Route path='/nav' element={<Navbar/>}/>
-      </Routes>
+    <div className="App">
+      <Container>
+        <SideNavbar setObject={setObject} object={object} arr={arr} setArr={setArr} setWriteNotes={setWriteNotes} writeNotes={writeNotes} dis={dis} setDis={setDis}></SideNavbar>
+        <Display object={object} setObject={setObject} arr={arr} setArr={setArr} setWriteNotes={setWriteNotes} writeNotes={writeNotes} dis={dis} setDis={setDis}></Display>
+      </Container>
     </div>
   );
 }
