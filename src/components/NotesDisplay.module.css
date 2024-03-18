@@ -1,0 +1,116 @@
+.main {
+    border: 2px solid black;
+    padding: 20px;
+    margin-left: 30%;
+    height: 100%;
+    width: 60vw;
+    border-radius: 2vh;
+    box-shadow: 0px 0px 10px black;
+    background-color: rgb(241, 241, 200);
+}
+
+.header {
+    text-align: center;
+
+
+}
+
+h1 {
+    text-align: center;
+}
+
+textarea {
+    height: 60vh;
+    width: 100%;
+    font-size: 30px;
+    border-radius: 2vh;
+
+}
+
+.container {
+    display: flex;
+    padding: 5vh;
+    border: 2px solid black;
+    margin: 2%;
+    border-radius: 2vh;
+    box-shadow: 0px 0px 10px black;
+    background-color: rgb(138, 177, 177);
+
+
+}
+
+button {
+    display: block;
+}
+
+.search {
+    margin-left: 10%;
+    width: 12vh;
+    padding: 1vh;
+    width: 60%;
+
+}
+
+.saveBtn {
+    text-align: right;
+}
+
+.notes {
+    margin: 5%;
+    border-radius: 2vh;
+    word-wrap: break-word;
+}
+
+ul {
+    list-style: none;
+}
+
+.visibleNotes {
+    border: 1px solid black;
+    width: 30%;
+    height: 46vw;
+    border-radius: 2vh;
+    overflow: scroll;
+    box-shadow: 0px 0px 10px black;
+    background-color: rgb(241, 241, 200);
+}
+
+.internal {
+
+    border-radius: 2px;
+    height: 2vh;
+    overflow: hidden;
+    width: 20vh;
+}
+
+.note {
+    display: flex;
+}
+
+.btn {
+    display: flex;
+
+}
+
+.nav {
+    display: flex;
+}
+
+.btns {
+    display: flex;
+    padding-left: 2vh;
+}
+
+.edit {
+    margin-left: 2vh;
+    height: 4vh;
+    padding: 2vh;
+    padding-top: 1vh;
+}
+
+.title {
+    padding: 1vh;
+    margin: 1vh;
+    width: 50%;
+    border-radius: 2vh;
+}
