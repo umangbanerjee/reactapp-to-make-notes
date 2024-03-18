@@ -1,65 +1,52 @@
-
-.Notesbox {
-    width: 70vw;
-    height: 86vh;
-    margin-top: 3vh;
-    margin-left: 2vw;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px lightgreen;
+.NotesBox {
+  width: 75vw;
+  height: 95vh;
+  border-radius: 5px;
+  background-color: rgb(23, 24, 26);
+  margin-left: 5px;
+  border: 1px solid black;
 }
 
-.inputNotes {
-    font-size: 20px;
-    margin-top: 2vh;
-    margin-left: 1.7vh;
-    border-radius: 10px;
-    height: 62vh;
-    width: 66.5vw;
-    overflow: auto;
-    text-wrap: wrap;
-    padding: 10px;
+.NotesBox form {
+  margin-top: 1.8rem;
+  margin-left: 8.5rem;
 }
 
-.notesName {
-    font-family: cursive;
-    height: 6vh;
-    margin-bottom:40px;
-    margin-top: -5px;
-    /* border: 2px solid black; */
-    text-align: center;
-    font-size: 50px;
-    font-weight: 900;
+textarea {
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
 }
 
-.funBtn {
-    margin-top: 3vh;
-    display: flex;
-    justify-content: space-around;
-    /* background-color: beige; */
+.NotesBox hr {
+  margin-top: 1rem;
+}
 
+.NotesBox h1 {
+  margin-left: 25rem;
+  color: white;
 }
 
 .btn {
-    font-size: 40px;
-    height: 4vw;
-    width: 4vw;
-    background-color: white;
-    border-radius: 5px;
-}
-.btnleft{
-    font-size: 40px;
-    height: 4vw;
-    width: 4vw;
-    background-color: lightgreen;
-    border-radius: 5px;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2rem;
+  margin-top: 4rem;
+  width: 2rem;
 }
 
-.colorPopup {
-    /* width: 20%; */
-    border: 2px solid black;
-    border-radius: 5px;
-    position: fixed;
-    margin-left: 20vw;
-    margin-top: 1vh;
-    background-color: white;
+.btn button {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.cont2 {
+  display: flex;
+}
+
+.cont1 {
+  display: flex;
+}
+
+form textarea {
+  box-shadow: 2px 2px 17px;
 }
