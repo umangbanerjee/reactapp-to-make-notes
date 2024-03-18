@@ -1,0 +1,31 @@
+.container{
+   background-color: rgb(157, 145, 145);
+}
+.note{
+    color: rgb(66, 18, 226);
+    margin-top: 20px;
+    margin-left: 15px;
+    /* box-shadow: 0 0 20px 5px red; */
+    text-shadow: 5px 4px  5px rgb(13, 213, 213);
+}
+*{
+    margin: 0px;
+}
+.icon{
+    color: rgb(238, 17, 17);
+    border-radius: 40%;
+    padding-right: 10px;
+    padding-left: 12px;
+    margin-left: 50px;
+    
+}
+.list{
+    display: flex;
+}
+.internal:hover{
+    cursor: pointer;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
+    border-radius: 30%;
+    padding-right: 10px;
+    padding-left: 12px;
+}
