@@ -1,6 +1,14 @@
 import React, { useState } from 'react'
 import styles from "./Notes.module.css"
 import { ColorPicker } from 'primereact/colorpicker';
+import { FaDownload } from "react-icons/fa";
+import { FaBold } from "react-icons/fa";
+import { FaAlignLeft } from "react-icons/fa";
+import { FaAlignRight } from "react-icons/fa";
+import { FaAlignJustify } from "react-icons/fa";
+import { CgColorPicker } from "react-icons/cg";
+import { BsArrowsFullscreen } from "react-icons/bs";
+import { FaAlignCenter } from "react-icons/fa";
 
 export default function Notes({ note, setNote }) {
     const [color1, setColor1] = useState(false);
@@ -12,11 +20,9 @@ export default function Notes({ note, setNote }) {
     const [right, setRight] = useState(false);
     const [justify, setJustify] = useState(false);
     const [center, setCenter] = useState(false);
-    const [print, setPrint] = useState(false);
-    
     function handleChange(e) {
         e.preventDefault();
-            setNote({ ...note, [e.target.id]: e.target.value })
+        setNote({ ...note, [e.target.id]: e.target.value })
     }
     function handleBold(e) {
         e.preventDefault();
@@ -135,48 +141,58 @@ export default function Notes({ note, setNote }) {
             handleLeft(e)
         }
     }
-    function handlePrint(e) {
-        e.preventDefault();
-        setPrint(!print)
-        if (!print) {
-            var printTextArea = document.getElementById("text");
-            var WinPrint = window.open('left=0,top=0,width=800,height=900,');
-            WinPrint.document.write(printTextArea.innerHTML);
-            WinPrint.document.close();
-            WinPrint.focus();
-            WinPrint.print();
-            WinPrint.close();
-        }
-        setPrint(true);
-    }
     function handleColorChange(e) {
         setColor(e.target.value)
         document.getElementById("text").style.color = `#${color}`;
     }
-    
+    function handleToggleFullscreen() {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+    }
+    const handleDownload = () => {
+        const content = 'Hello, world!';
+        const blob = new Blob([content], { type: 'text/plain' });
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'example.txt'; 
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+    };
+
     return (
         <div className={styles.Notesbox}>
             <div className={styles.notesName}>
-                
+
                 <label htmlFor="title"><u>{note.title === "" ? "Title" : note.title}</u></label>
             </div>
             <div className={styles.funBtn}>
-                <button className={styles.btn} onClick={handleBold} id="bold"><i class="fa-solid fa-bold"></i></button>
-                <button className={styles.btn} onClick={handleItalic} id="italic"><i class="fa-solid fa-italic"></i></button>
-                <button className={styles.btn} onClick={handleUnderline} id="underline"><i class="fa-solid fa-underline"></i></button>
-                <button className={styles.btn} onClick={handleColor} id="color"><i class="fa-solid fa-palette" ></i></button>
-                <button className={styles.btnleft} onClick={handleLeft} id="left"><i class="fa-solid fa-align-left"></i></button>
-                <button className={styles.btn} onClick={handleRight} id="right"><i class="fa-solid fa-align-right"></i></button>
-                <button className={styles.btn} onClick={handleJustify} id="justify"><i class="fa-solid fa-align-justify" ></i></button>
-                <button className={styles.btn} onClick={handleCenter} id="center"><i class="fa-solid fa-align-center"></i></button>
-                <button className={styles.btn} onClick={handlePrint} id="print"><i class="fa-solid fa-print"></i></button>
+                <button className={styles.btn} onClick={handleBold} id="bold" ><FaBold /></button>
+                <button className={styles.btn} onClick={handleItalic} id="italic"><i class="fa-solid fa-italic">I</i></button>
+                <button className={styles.btn} onClick={handleUnderline} id="underline"><i class="fa-solid fa-underline">_</i></button>
+                <button className={styles.btn} onClick={handleColor} id="color"><CgColorPicker /></button>
+                <button className={styles.btn} onClick={handleLeft} id="left"><FaAlignRight />
+                </button>
+                <button className={styles.btn} onClick={handleRight} id="right"><FaAlignLeft /></button>
+                <button className={styles.btn} onClick={handleJustify} id="justify"><FaAlignJustify /></button>
+                <button className={styles.btn} onClick={handleCenter} id="center"><FaAlignCenter /></button>
+                <button className={styles.btn} onClick={handleToggleFullscreen}><BsArrowsFullscreen /></button>
+                <button onClick={handleDownload} className={styles.btn}><FaDownload /></button>
+
             </div>
             {color1 && (
                 <div className={styles.colorPopup}>
                     <ColorPicker value={color} onChange={handleColorChange} inline />
                 </div>
             )}
-            <textarea type="text" onChange={handleChange} id='text' value={note.text} className={styles.inputNotes} placeholder='Write Your Notes Here' />
+            <textarea name="notecontent" class="form-control textarea " placeholder="Note Content" tabindex="2" rows="19" onChange={handleChange} id='text' value={note.text} className={styles.inputNotes} ></textarea>
         </div>
     )
 }
