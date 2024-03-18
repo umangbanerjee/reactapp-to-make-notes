@@ -1,0 +1,86 @@
+.sidebar {
+    width: 240px;
+    background-color: #48e1ac;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 2px solid #080808;
+  }
+
+
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    border-bottom: 3px solid rgb(8, 8, 8);
+    background-color: #48e1ac;
+  }
+  
+  .sidebar-header h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .sidebar-header button {
+    padding: 8px 12px;
+    background-color: rgb(22, 164, 50);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .sidebar-header button:hover {
+    background-color: #e48816;
+  }
+  
+  .sidebar-notes {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .sidebar-note {
+    padding: 10px 20px;
+    border-bottom: 1px solid #080d04;
+    cursor: pointer;
+  }
+
+  .sidebar-note:hover {
+    background-color: rgb(245, 95, 25);
+  }
+  
+  .sidebar-note.active {
+    background-color: #48e1ac;
+  }
+  .sidebar-note.active:hover {
+    background-color: rgb(245, 95, 25);
+  }
+
+  .sidebar-note-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .sidebar-note-title strong {
+    font-size: 16px;
+  }
+  
+  .sidebar-note-title button {
+    padding: 4px 8px;
+    background-color: #fd342d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .sidebar-note-title button:hover {
+    background-color: #090808;
+  }
+  
+  .sidebar-note p {
+    margin: 7px 0 0 0;
+    border: 0.5px solid rgb(42, 170, 121);
+  }
