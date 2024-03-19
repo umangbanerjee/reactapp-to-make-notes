@@ -1,4 +1,5 @@
 Note Maker App
+
 Overview
 This is a simple note maker application built using React. It allows users to create, edit, and delete notes. Notes are stored locally in the browser's storage.
 
