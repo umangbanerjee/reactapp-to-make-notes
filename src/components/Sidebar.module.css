@@ -1,0 +1,70 @@
+.sidebar {
+    width: 30%;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+  }
+  
+.sidebarheader {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    box-shadow: 0px 0px 5px;
+    margin: 0.5rem;
+}
+
+.sidebarheader h1 {
+    margin: 0;
+}
+
+.sidebarnotes {
+    height: calc(100vh - 78px);
+    overflow-y: scroll;
+    margin: 1rem;
+}
+
+.sidebarnote {
+    padding: 25px;
+    cursor: pointer;
+}
+
+.sidebarNoteTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.sidebarnote button {
+    color: crimson;
+}
+
+.sidebarnote p {
+    margin: 10px 0;
+}
+
+.sidebarnote small {
+    display: block;
+    color: #999;
+}
+  
+.sidebarnote:hover {
+    background: #ddd;
+}
+
+.sidebarnote.active,
+.sidebarnote.active small {
+    background: #08c;
+    color: white;
+}
+
+button {
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  color: #08c;
+}
+
+button:hover {
+  color: #04c;
+}
