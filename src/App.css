@@ -1,0 +1,79 @@
+/* App.css */
+
+.name {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sidebar {
+    width: 300px;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+  }
+  
+  .sidebar input[type="text"],
+  .sidebar textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .sidebar textarea {
+    height: 150px;
+  }
+  
+  .save-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .save-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .notes-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .note {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .note h3 {
+    margin-top: 0;
+  }
+  
+  .delete-button,
+  .download-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover,
+  .download-button:hover {
+    background-color: #c82333;
+  }
+  
