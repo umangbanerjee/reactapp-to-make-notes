@@ -1,7 +1,7 @@
 import {Routes,Route} from 'react-router-dom'
 import Home from './components/Home';
 import Notes from './components/Notes';
-import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/notes' element={<Notes/>}/>
-        <Route path='/nav' element={<Navbar/>}/>
+        <Route path='/side' element={<Sidebar/>}/>
       </Routes>
     </div>
   );
