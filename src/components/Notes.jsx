@@ -66,7 +66,7 @@ doc.save(`${obj.title}`.pdf);
 
         </div>
         <div className={styles.notetitle}>
-            <div className={styles.maintitle}>{obj.title!==''?obj.title:"TITLE"}<button onClick={handleDownload} className={styles.dnldbtn}>Download</button></div>
+            <div className={styles.maintitle}>{obj.title!==''?obj.title:"TITLE"}<button onClick={handleDownload} className={styles.dnldbtn}>Save</button></div>
           <div className={styles.txtarea}>
           <textarea  name="" id="txtarea"value={obj.txtarea} onChange={handleChange}></textarea>
           </div>
