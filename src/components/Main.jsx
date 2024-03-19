@@ -10,15 +10,20 @@ export default function Main({ activeNote, onUpdateNote }) {
     body: activeNote ? activeNote.body : "",
   });
 
-  const handleChange = useCallback(
-    (content, _, __, editor) => {
-      setNoteData({
-        ...noteData,
-        body: content,
-      });
-    },
-    [noteData]
-  );
+  // Update noteData when activeNote changes
+  useEffect(() => {
+    setNoteData({
+      title: activeNote ? activeNote.title : "",
+      body: activeNote ? activeNote.body : "",
+    });
+  }, [activeNote]);
+
+  const handleChange = useCallback((content) => {
+    setNoteData((prevNoteData) => ({
+      ...prevNoteData,
+      body: content,
+    }));
+  }, []);
 
   const handleSave = () => {
     onUpdateNote({
@@ -47,24 +52,20 @@ export default function Main({ activeNote, onUpdateNote }) {
     doc.save(`${noteData.title}.pdf`);
   };
 
-  // Update noteData when activeNote changes
-  useEffect(() => {
-    setNoteData({
-      title: activeNote ? activeNote.title : "",
-      body: activeNote ? activeNote.body : "",
-    });
-  }, [activeNote]);
-
   return (
     <div className="app-main">
       {/* Heading Input */}
       <input
         type="text"
         value={noteData.title}
-        onChange={(e) => setNoteData({ ...noteData, title: e.target.value })}
+        onChange={(e) =>
+          setNoteData((prevNoteData) => ({
+            ...prevNoteData,
+            title: e.target.value,
+          }))
+        }
         placeholder="Enter Note Heading"
         className="note-heading-input"
-        defaultValue='Untitled Note'
       />
 
       <div className="app-main-note-edit">
