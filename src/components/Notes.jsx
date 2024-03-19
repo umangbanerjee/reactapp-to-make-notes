@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Notes.module.css'
 import { useState } from 'react'
+import { jsPDF } from 'jspdf';
 export default function Notes() {
   const [obj, setObj] =useState({title:"",txtarea:""});
   const [arr, setArr] =useState([])
@@ -8,6 +9,14 @@ export default function Notes() {
  function handleDel(index){
    setArr(arr.filter((element,ind)=> ind!==index))
    setObj({title:"",txtarea:""})
+ }
+ function handleDownload(e){
+   e.preventDefault();
+   const doc = new jsPDF();
+
+doc.text(`${obj.txtarea}`, 10, 10);
+doc.save(`${obj.title}`.pdf);
+
  }
  
    function handleSubmit(e){
@@ -57,7 +66,7 @@ export default function Notes() {
 
         </div>
         <div className={styles.notetitle}>
-            <div className={styles.maintitle}>{obj.title!==''?obj.title:"TITLE"}</div>
+            <div className={styles.maintitle}>{obj.title!==''?obj.title:"TITLE"}<button onClick={handleDownload} className={styles.dnldbtn}>Save</button></div>
           <div className={styles.txtarea}>
           <textarea  name="" id="txtarea"value={obj.txtarea} onChange={handleChange}></textarea>
           </div>
