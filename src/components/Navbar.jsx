@@ -36,7 +36,7 @@ export default function Navbar({ note, setNote, arrNotes, setArrNotes }) {
         e.preventDefault();
         setAdd(true)
         setSearch(false);
-        handleCancel(e)
+        // handleCancel(e)
     }
     function handleChange(e) {
         e.preventDefault();
