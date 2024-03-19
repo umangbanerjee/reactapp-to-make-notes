@@ -1,0 +1,324 @@
+ @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 10px;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("https://img.freepik.com/premium-photo/smart-mobile-phone-social-networks-connect-global-network-network-touch-screen-device-digital-links-data-information-online-internet-things_1417-25064.jpg?size=626&ext=jpg&ga=GA1.1.665338535.1710153915&semt=ais"), #000;
+    background-position:center;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    background-size: cover;
+}
+
+.wrapper {
+    width: 90vw;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    height: 90vh;
+    display: flex;
+}
+
+
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: left;
+    display:inline;
+}
+
+
+.input-field {
+    position: relative;
+    margin: 15px 0;
+    display: inline;
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.15s ease;
+}
+
+.input-field input {
+    width: 70%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    float: left;
+    border-bottom: 2px solid #d2d2d2;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.input-field input:focus~label,
+.input-field input:valid~label {
+    font-size: 0.8rem;
+    top: 10px;
+    transform: translateY(-120%);
+}
+
+
+
+#remember {
+    accent-color: #fff;
+}
+
+
+
+.wrapper a {
+    color: #efefef;
+    text-decoration: none;
+}
+
+.wrapper a:hover {
+    text-decoration: underline;
+}
+
+.btn button {
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    height: 40px;
+    width: 40px;
+}
+.btn li{
+    float: right;
+    margin-top: 7px;
+}
+
+.btn button:hover {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.register {
+    text-align: center;
+    margin-top: 30px;
+    color: #fff;
+}
+
+.notes {
+    width: 20vw;
+    border-radius: 8px;
+    text-align: center;
+    border: 0px solid rgba(255, 255, 255, 0.5);
+    height: 83vh;
+    display: flex;
+}
+
+.editor {
+    width: 70vw;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    background-color: #b2b2b259;
+    height: 83vh;
+    display: flex;
+
+}
+
+.editor-box {
+    height: 73vh;
+    width: 67vw;
+    margin-left: 20px;
+    background-color: #9e9e9ea6;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: none;
+    background: transparent !important;
+}
+.notesList{
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+}
+.notesList::-webkit-scrollbar {
+    display: none;
+}
+.lists{
+    scroll-behavior: smooth;
+    overflow: scroll;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border-radius: 8px;
+}
+.notesList li{
+    border: 1px solid rgba(213, 213, 213, 0.503);
+    margin: 15px 10px;
+    height: 50px;
+    border-radius: 8px;
+    text-align: left;
+    padding: 12px;
+    transition: 0.2s;
+}
+.notesList li:hover{
+    background-color: #ffffff8a;
+}
+
+
+
+.btn li {
+    display: inline;
+
+
+}
+
+
+
+.head {
+    align-items: center;
+    border: 1px solid rgba(143, 143, 143, 0.678);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    width: 18vw;
+    display: block;
+    height: 7vh;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.head-name {
+    align-items: center;
+    border: 1px solid rgba(143, 143, 143, 0.678);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    width: 18vw;
+    display: block;
+    height: 7vh;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+}
+
+.lists {
+    display: flex;
+    border: 1px solid rgba(143, 143, 143, 0.678);
+    display: block;
+    justify-content: left;
+    height: 57vh;
+    width: 18vw;
+    margin-top: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+.notesList li button{
+    border-radius: 5px;
+    border: none;
+    font-size: 10px;
+    height: 25px;
+    width: 50px;
+    margin: 0 5px;
+    float: right;
+}
+.notesList li button:hover{
+    background: transparent;
+    border: 2px solid white;
+}
+.input-field button{
+    display: inline;
+    float: right;
+    margin-right: 10px;
+    height: 28px;
+    width: 75px;
+    border: none;
+    border-radius: 5px;
+    
+}
+.input-field button:hover{
+    background: transparent;
+    border: 2px solid white;
+}
+.input-field{
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        padding: 10px;
+    }
+
+    .input-field input {
+        font-size: 16px;
+    }
+
+    .btn button {
+        height: 30px;
+        width: 30px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .notes {
+        padding: 10px;
+    }
+
+    .notesList li {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .notes { display: none; }
+    .notes-editor { display: none; }
+    .smallscreen {
+        display: block;
+        color: rgb(0, 0, 0);
+        font-size: small;
+        text-align: center;
+    }
+    body::before {
+        background: none;
+    }
+    }
+    @media only screen and (min-width: 801px) {
+        .smallscreen { display: none; }
+    }
+    
+
+
+    
