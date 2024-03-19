@@ -1,18 +1,15 @@
-import {Routes,Route} from 'react-router-dom'
-import Home from './components/Home';
-import Notes from './components/Notes';
-import Navbar from './components/Navbar';
 
+import './App.css'
+import Header from './component/Header'
+import Notes from './component/Notes'
 function App() {
+
   return (
-    <div>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/notes' element={<Notes/>}/>
-        <Route path='/nav' element={<Navbar/>}/>
-      </Routes>
-    </div>
-  );
+<div className='main'>
+  <Header/>
+  <Notes/>
+</div>
+  )
 }
 
-export default App;
+export default App

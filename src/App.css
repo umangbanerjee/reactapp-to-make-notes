@@ -1,0 +1,36 @@
+body {
+    background: rgb(185,30,69);
+  background: linear-gradient(214deg, rgba(185,30,69,1) 0%, rgba(171,46,82,1) 0%, rgba(105,122,144,1) 62%, rgba(67,94,80,1) 73%);
+  }
+  
+  .main {
+    max-width: 960px;
+    margin: 0px auto;
+    padding: 0px 15px;
+    min-height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+  }
+  
+  .title {
+    color: #fff;
+    font-size: 38px;
+    font-weight: 400;
+  }
+  
+  .notes {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    /* grid-template-columns: repeat(3, minmax(300px, 1fr)); */
+  }
+  
+  
+  
