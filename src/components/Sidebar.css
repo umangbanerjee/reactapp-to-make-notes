@@ -1,0 +1,20 @@
+.addbtn{
+    height: 20px;
+}
+.not{
+    text-align: center;
+    border: 2px dotted blue;
+    color: rgb(255, 38, 0);
+    font-weight: 900;
+}
+.sear{
+    margin-left: -30px;
+    width: 230px;
+    height: 40px;
+    background-color: rgb(202, 222, 222);
+    
+}
+.not{
+    border: 2px solid black;
+}
+
