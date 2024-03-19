@@ -55,8 +55,8 @@ export default function Displaynotes() {
                         {data.map((value, index) => (
                             <ul key={index}>
                                 <li>
-                                    {/* Render notes with markdown-like formatting */}
-                                    <div dangerouslySetInnerHTML={{ __html: value }}></div>
+                                  
+                                    {value}
                                     <button type='button' className='deletebtn' onClick={() => handleDelete(index)}>Delete</button>
                                     <button type='button' onClick={() => handleView(index)}>View</button>
                                 </li>
