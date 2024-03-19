@@ -1,24 +1,29 @@
-import React, { useState } from 'react'
-import Navbar from './componanent/Navbar'
-import Form from './componanent/Form'
-import Notes from './componanent/Notes'
+import './App.css'
+import Header from './Components/Header'
+import Notes from './Components/Notes'
+import Navbar from './Components/Navbar'
+import {ReactToPrint} from 'react-to-print'
 
-export default function App() {
-  const [title, setTitle] =useState("")
-  const [decripotion, setDiscription] =useState("")
+function App() {
+
   return (
-    <>
+    <div >
+    <div className='main'>
+      <ReactToPrint
+      trigger={()=>{
+        return <button>Print</button>
+      }}
+      content = {() => this.componentRef}
+      documentTitle="new document"
+      pageStyle="print"
+      />
+      <Header />
+      
       <Navbar/>
-      <Form title={title} setTitle={title} decripotion={decripotion} setDiscription={decripotion}/>
-      <Notes/>
-
-      <div className='container'>
-        <div className='row justify-content-center'>
-          <div className='col-md-10'>
-            <h1 className='md-3'>Your Name</h1>
-          </div>
-        </div>
-      </div>
-  </>
+      <Notes />
+    </div>
+</div>
   )
 }
+
+export default App

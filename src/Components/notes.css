@@ -1,0 +1,52 @@
+.note {
+    background: rgba(0, 0, 0, 0.7);
+  
+   
+
+    border: 1.5px solid rgba(0, 0, 0, 0.326);
+    color: #ff5959;
+    padding: 15px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-wrap: break-word;
+}
+
+
+
+
+.note textarea {
+   
+    background: transparent;
+    border: none;
+    color: #fff;
+    resize: none;
+    font-size: 18px;
+}
+
+.note textarea:focus {
+    outline: none;
+}
+
+.note textarea::placeholder {
+    color: #fff;
+}
+
+.note_save {
+    background: transparent;
+    
+    border: 1.5px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.note_save:hover {
+   
+    border: 1.5px solid #fff;
+    color: #4b1589;
+}
+
