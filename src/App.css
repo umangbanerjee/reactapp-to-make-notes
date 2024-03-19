@@ -1,0 +1,84 @@
+/* App.css */
+
+/* Main container styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 300px;
+    margin-right: 20px;
+  }
+  
+  /* Input styles */
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+    resize: vertical; /* Allow vertical resizing */
+  }
+  
+  /* Button styles */
+  .save-btn {
+    width: 100%;
+    background-color: #0a73a0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .save-btn:hover {
+    background-color: #095d80;
+  }
+  
+  /* Notes container styles */
+  .notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Note styles */
+  .note {
+    width: 300px;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .note h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .note p {
+    font-size: 16px;
+    max-height: 100px; /* Limiting the height */
+    overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+  }
+  
+  /* Delete button styles */
+  .delete-btn {
+    background-color: #f0e7e8;
+    color: #d14545;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .delete-btn:hover {
+    background-color: #0e0d0d;
+  }
