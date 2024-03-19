@@ -17,6 +17,4 @@ Welcome to the Notes Maker App project. This application is designed to make not
 
 Stay tuned for these exciting updates!
 
-## Feedback
 
-Your feedback is important for the continuous improvement of this application. Feel free to share your thoughts or report any issues you encounter. Thank you for your support!
