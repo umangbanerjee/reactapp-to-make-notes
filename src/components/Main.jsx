@@ -1,6 +1,7 @@
 import React, { useCallback, useState, useEffect } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import "./react-quill-custom.css";
 import "../App.css";
 import jsPDF from "jspdf";
 
@@ -47,10 +48,12 @@ export default function Main({ activeNote, onUpdateNote }) {
 
   const handleDownloadPDF = () => {
     const doc = new jsPDF();
+    const textWithoutTags = noteData.body.replace(/<[^>]*>/g, ''); // Remove HTML tags
     doc.text(noteData.title, 10, 10);
-    doc.text(noteData.body, 10, 20);
+    doc.text(textWithoutTags, 10, 20);
     doc.save(`${noteData.title}.pdf`);
   };
+  
 
   return (
     <div className="app-main">
