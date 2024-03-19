@@ -70,6 +70,7 @@
     margin-top:2vh;
     text-align: center;
     font-size:3em;
+    margin-left: 20vw;
 }
 .txtarea{
     margin-top:6vh;
@@ -90,4 +91,12 @@
   font-size: 1.5em;
   height: 1.7em;
 
+}
+.dnldbtn{
+    margin-left: 20vw;
+    width: 7vw;
+    height: 2vw;
+}
+.dnldbtn:hover{
+ background-color: rgb(29, 145, 106);
 }
