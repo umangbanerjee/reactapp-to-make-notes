@@ -23,7 +23,6 @@ export default function Sidebar({
     <div className="app-sidebar">
       <div className="app-sidebar-header">
         <h1>Notes</h1>
-        <button onClick={onAddNote}>Add</button>
       </div>
       <div className="app-sidebar-search">
         <input
@@ -46,6 +45,9 @@ export default function Sidebar({
             </div>
           </div>
         ))}
+      </div>
+      <div className="app-sidebar-footer">
+        <button onClick={onAddNote}>Add</button>
       </div>
     </div>
   );
