@@ -1,18 +1,18 @@
-import {Routes,Route} from 'react-router-dom'
-import Home from './components/Home';
-import Notes from './components/Notes';
-import Navbar from './components/Navbar';
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Notes from "./components/Notes";
+import NavBar from "./components/NavBar";
 
-function App() {
+const App = () => {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/notes' element={<Notes/>}/>
-        <Route path='/nav' element={<Navbar/>}/>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/notes" element={<Notes />}></Route>
+        <Route path="/navbar" element={<NavBar />}></Route>
       </Routes>
     </div>
   );
-}
+};
 
 export default App;
