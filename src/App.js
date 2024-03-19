@@ -1,18 +1,28 @@
-import {Routes,Route} from 'react-router-dom'
-import Home from './components/Home';
-import Notes from './components/Notes';
-import Navbar from './components/Navbar';
+import React,{useState} from 'react'
+import Navbar from './Components/Head/Navbar'
+import TextBody from './Components/Body/TextBody'
+import './App.css'
+import Savetext from './Components/Body/Savetext'
+export default function App() {
 
-function App() {
-  return (
-    <div>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/notes' element={<Notes/>}/>
-        <Route path='/nav' element={<Navbar/>}/>
-      </Routes>
-    </div>
-  );
+    const [notes, setNotes] = useState([]);
+
+    const handleSaveNote = (newNote) => {
+        setNotes([...notes, { ...newNote, id: Date.now() }]);
+    };
+
+    const handleDeleteNote = (noteId) => {
+        setNotes(notes.filter((note) => note.id !== noteId));
+    };
+    return (
+        <>
+            <Navbar/>
+            <div className='container'>
+                <Savetext  notes={notes} onDelete={handleDeleteNote} />
+                <TextBody  onSave={handleSaveNote}/>
+            </div>
+            
+        </>
+
+    )
 }
-
-export default App;

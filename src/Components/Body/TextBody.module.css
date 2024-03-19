@@ -1,0 +1,25 @@
+
+.body1{
+    border: 2px solid black;
+    height: 85vh;
+    width: 20vw;
+    margin-left: 3vw;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-image: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: scroll;
+}
+.body2{
+    border: 2px solid black;
+    height: 85vh;
+    width: 72vw;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-image: url(https://st4.depositphotos.com/1062624/20892/i/450/depositphotos_208923200-stock-illustration-abstract-blue-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: scroll;
+}
