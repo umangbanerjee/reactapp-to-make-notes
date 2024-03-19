@@ -1,0 +1,126 @@
+.Nav_Parent {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  width: 95.9644%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(
+    180deg,
+    rgb(250, 225, 58) 3.3%,
+    rgb(255, 157, 73) 96%
+  );
+  color: aliceblue;
+  font-size: larger;
+}
+.Nav_btn {
+  width: 10vw;
+  height: 6vh;
+  border-radius: 15px;
+}
+.below_nav {
+  display: flex;
+}
+.SidePanel {
+  width: 30%;
+  height: 87.35vh;
+  border-right: 1px solid #212121;
+
+  overflow: hidden;
+}
+.headingInSide {
+  width: 100%;
+  padding: 2vw;
+}
+.search_Box_Container {
+  background-color: rgb(198, 195, 193);
+  height: 5.5vh;
+}
+#search_box {
+  padding-left: 1.8vw;
+  margin-left: 0.5vw;
+  margin-top: 1vh;
+  width: 89.5%;
+  height: 3vh;
+  border-radius: 20px;
+  border: 0.5px solid black;
+}
+#search_icon {
+  position: fixed;
+  left: 1.1vw;
+  top: 14%;
+  color: rgb(155, 155, 155);
+}
+/* Assuming you have FontAwesome icons imported properly */
+.sidePanel_btn {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.metaData {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Style for the whole ShowedList */
+.ShowedList {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style for the title */
+.List_Title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+/* Style for the links */
+a {
+  text-decoration: none;
+}
+
+/* Style for the edit and delete buttons */
+.sidePanel_btn {
+  background-color: #dcdbdb;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  margin-right: 1vw;
+  width: 5.5vw;
+  height: 4vh;
+}
+.sidePanel_btn:active {
+  background-color: #777;
+  color: #ccc;
+}
+.activeNavLink {
+  background-color: #6c6c6c;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  color: #ccc;
+}
+.Active_List_Title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #dedede;
+  width: 100%;
+  overflow-x: scroll;
+}
+.Active_metaData {
+  font-size: 12px;
+  color: #dedede;
+}

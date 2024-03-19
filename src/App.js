@@ -1,18 +1,23 @@
-import {Routes,Route} from 'react-router-dom'
-import Home from './components/Home';
-import Notes from './components/Notes';
-import Navbar from './components/Navbar';
-
-function App() {
+import React from 'react'
+import MainNav from './Components/MainNav.jsx'
+import { Route, Routes } from 'react-router-dom'
+import Home from './Components/Home.jsx'
+import ShowSavedNotes from './Components/ShowSavedNotes.jsx'
+import SideView from './Components/SideView.jsx'
+import MainEditor from './Components/MainEditor.jsx'
+export default function App() {
   return (
     <div>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/notes' element={<Notes/>}/>
-        <Route path='/nav' element={<Navbar/>}/>
-      </Routes>
+      <MainNav />
+      <div className="below_nav">
+        <SideView />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path='/ShowSaved' element={<ShowSavedNotes/>} />
+          <Route path='/editor' element={<MainEditor/>} />
+        </Routes>
+
+      </div>
     </div>
   );
 }
-
-export default App;
