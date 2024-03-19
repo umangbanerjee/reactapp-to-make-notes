@@ -1,0 +1,47 @@
+.noteHeading{
+    background: linear-gradient(to right, #caefd7, #f5bfd7, #abc9e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 6px;
+    margin-left: 20px;
+}
+
+.header{
+    background-color:rgb(72, 73, 73);
+    height: 7vh;
+    width: 75vw;
+    
+}
+.font{
+   
+    font-weight: 700;
+    padding-left: 6vw;
+    align-items: center;
+}
+
+.font button{
+    border: none;
+    background-color:rgb(69, 72, 71);
+    color: rgb(195, 197, 198); 
+}
+
+.font button :hover{
+    color: aliceblue;
+}
+
+
+
+.edit,textarea{
+    height: 90vh;
+    width: 100%;
+}
+.description{
+    max-height: 680px;
+    position:static;
+    overflow-y:scroll;
+    padding: 0 15px 0 15px;
+}
+.title{
+    padding: 25px 25px 0 25px;
+    margin: 0;
+}

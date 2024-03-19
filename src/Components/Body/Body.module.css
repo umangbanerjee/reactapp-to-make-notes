@@ -1,0 +1,22 @@
+.noteHeading{
+  background: linear-gradient(to right, #caefd7, #f5bfd7, #abc9e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 6px;
+  margin-left: 20px;
+}
+
+.header{
+    display: flex;
+}
+.sidebar{
+    flex: 25%;
+    height: 100vh;
+    background-color: rgb(189, 175, 168);
+}
+
+.note{
+   flex: 75%;
+   background-color:rgb(191, 190, 190);
+   height: 100vh;
+} 
