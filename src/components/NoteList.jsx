@@ -19,6 +19,4 @@ const NoteList = ({ notes, deleteNote }) => {
         </div>
     );
 };
-
 export default NoteList;
-
