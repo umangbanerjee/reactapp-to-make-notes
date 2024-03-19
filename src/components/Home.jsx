@@ -1,16 +1,43 @@
-import React from 'react'
-import Navbar from './Navbar'
-import Notes from './Notes'
-import styles from "./Home.module.css"
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import Post from './NotesPart/Post';
+import Notes from './NotesPart/Notes';
+import SideBar from './SideBarPart/SideBar'; 
 
 export default function Home() {
-    const [note,setNote]=useState({title:"",text:""})
-    const [arrNotes,setArrNotes]=useState([]);
+    const [notes, setNotes] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
+
+    useEffect(() => { 
+        const savedNotes = JSON.parse(localStorage.getItem('notes'));
+        if (savedNotes) {
+            setNotes(savedNotes);
+        }
+    }, []);
+
+    useEffect(() => { 
+        localStorage.setItem('notes', JSON.stringify(notes));
+    }, [notes]);
+
+    const addNote = (newNote) => {
+        setNotes([...notes, newNote]);
+    };
+
+    const deleteNote = (index) => {
+        const updatedNotes = [...notes];
+        updatedNotes.splice(index, 1);
+        setNotes(updatedNotes);
+    }
+
+    const handleSearchChange = (query) => {
+        setSearchQuery(query);
+    };
+
     return (
-        <div className={styles.BigBox}>
-            <Navbar note={note} setNote={setNote} arrNotes={arrNotes} setArrNotes={setArrNotes}></Navbar>
-            <Notes note={note} setNote={setNote} arrNotes={arrNotes} setArrNotes={setArrNotes}></Notes>
+        <div>
+            <SideBar />
+            <Notes addNote={addNote} handleSearchChange={handleSearchChange} searchQuery={searchQuery} />
+            <Post notes={notes} deleteNote={deleteNote} filteredNotes={notes.filter((note) => 
+                note.title.toLowerCase().includes(searchQuery.toLowerCase()))} />
         </div>
-    )
+    );
 }
